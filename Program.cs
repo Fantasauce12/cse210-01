@@ -39,14 +39,19 @@ namespace Jax // Note: actual namespace depends on the project name.
         }
 
         static void playerOne(List<char> displayboard){
-            Console.Write("x's turn to choose a square (1-9):");
-            char playerOneInput = Console.ReadLine()[0];
-            for (int i=0; i < displayboard.Count; i++){
-                if (Char.Equals(displayboard[i],playerOneInput)){
-                    displayboard[i] = 'x';
-
-                }
-
+            int check = 0;
+            while (check == 0){
+                Console.Write("x's turn to choose a square (1-9):");
+                char playerOneInput = Console.ReadLine()[0];
+                int intVal = (int)Char.GetNumericValue(playerOneInput) - 1;
+                if (Char.Equals(displayboard[intVal],playerOneInput)){
+                    displayboard[intVal] = 'x';
+                    check = 1;
+                    }
+                else if(Char.Equals(displayboard[intVal],'x')||Char.Equals(displayboard[intVal],'o')){
+                    Console.WriteLine("Invalid.");
+                    }
+    
             }
         }
 
