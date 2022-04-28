@@ -49,19 +49,25 @@ namespace Jax // Note: actual namespace depends on the project name.
                     check = 1;
                     }
                 else if(Char.Equals(displayboard[intVal],'x')||Char.Equals(displayboard[intVal],'o')){
-                    Console.WriteLine("Invalid.");
+                    Console.WriteLine("That spot has been taken.");
                     }
     
             }
         }
 
         static void playerTwo(List<char> displayboard){
-            Console.Write("o's turn to choose a square (1-9):");
-            char playerTwoInput = Console.ReadLine()[0];
-            for (int i=0; i < displayboard.Count; i++){
-                if (Char.Equals(displayboard[i],playerTwoInput)){
-                    displayboard[i] = 'o';
-                }
+            int check = 0;
+            while (check == 0){
+                Console.Write("o's turn to choose a square (1-9):");
+                char playerTwoInput = Console.ReadLine()[0];
+                int intVal = (int)Char.GetNumericValue(playerTwoInput) - 1;
+                if (Char.Equals(displayboard[intVal],playerTwoInput)){
+                    displayboard[intVal] = 'o';
+                    check = 1;
+                    }
+                else if(Char.Equals(displayboard[intVal],'x')||Char.Equals(displayboard[intVal],'o')){
+                    Console.WriteLine("That spot has been taken.");
+                    }
 
             }
         }
