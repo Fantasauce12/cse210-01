@@ -19,11 +19,14 @@ namespace Jax // Note: actual namespace depends on the project name.
 
             while (gameStatus == 0)
             {
+                DisplayBoard(board);
+
                 playerOne(board);
+
+                DisplayBoard(board);
 
                 playerTwo(board);
 
-                DisplayBoard(board);
             }
 
 
@@ -38,6 +41,7 @@ namespace Jax // Note: actual namespace depends on the project name.
             Console.WriteLine(displayboard[6] + "|" + displayboard[7] + "|" + displayboard[8]);
         }
 
+        //Function for all of PlayerOne's Actions
         static void playerOne(List<char> displayboard){
             int check = 0;
             while (check == 0){
@@ -55,6 +59,8 @@ namespace Jax // Note: actual namespace depends on the project name.
             }
         }
 
+
+        //Function for all of PlayerTwo's actions
         static void playerTwo(List<char> displayboard){
             int check = 0;
             while (check == 0){
