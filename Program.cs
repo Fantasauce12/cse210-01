@@ -71,6 +71,9 @@ namespace Jax // Note: actual namespace depends on the project name.
                 else if(Char.Equals(displayboard[intVal],'x')||Char.Equals(displayboard[intVal],'o')){
                     Console.WriteLine("That spot has been taken.");
                     }
+                else{
+                    Console.WriteLine("That spot does not exist.");
+                }
     
             }
         }
@@ -90,6 +93,9 @@ namespace Jax // Note: actual namespace depends on the project name.
                 else if(Char.Equals(displayboard[intVal],'x')||Char.Equals(displayboard[intVal],'o')){
                     Console.WriteLine("That spot has been taken.");
                     }
+                else{
+                    Console.WriteLine("That spot does not exist.");
+                }
 
             }
         }
